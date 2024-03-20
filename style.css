@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  font-family: "TT Lakes";
+}
+
+body {
+  background: #f8f8f8;
+}
+
+.container {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 15px 0;
+  color: #7e7e82;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-gap: 32px;
+}
+
+.brands__item--hide {
+  display: none;
+}
+
+.more {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1b1c21;
+  border: none;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin-top: 24px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 720px;
+  }
+
+  .brands {
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, 224px);
+    /* justify-content: space-between; */
+    grid-gap: 24px;
+  }
+
+  .brands__item {
+    display: block;
+  }
+
+  .brands__item--hide {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container {
+    width: 100%;
+    padding-left: 16px;
+  }
+
+  .brands {
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    /* justify-content: space-between; */
+    grid-gap: 24px;
+  }
+
+  .brands__item {
+    justify-self: center;
+    display: none;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+  }
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.right {
+  animation-name: right;
+  animation-duration: 0.4s;
+}
+
+@keyframes right {
+  from {
+    transform: translateX(100%);
+    /* opacity: 0.4; */
+  }
+  to {
+    /* opacity: 1; */
+    transform: translateX(0);
+  }
+}
+
+.left {
+  animation-name: left;
+  animation-duration: 0.4s;
+}
+
+@keyframes left {
+  from {
+    transform: translateX(-100%);
+    /* opacity: 0.4; */
+  }
+  to {
+    /* opacity: 1; */
+    transform: translateX(0);
+  }
+}
